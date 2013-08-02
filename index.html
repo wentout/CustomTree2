@@ -8,16 +8,424 @@
 	<script language = "JavaScript" type = "text/javascript" charset = "utf-8" src = "./jquery-2.0.2.js"></script>
 	<link rel = "stylesheet" type = "text/css" href = "./tree.css">
 	<script language = "JavaScript" type = "text/javascript" charset = "utf-8" src = "./tree.js"></script>
+	<style>
+		a {
+			text-decoration: underline;
+			color: black;
+		}
+		div.content {
+			padding-left: 100px;
+		}
+	</style>
 
 <body>
 	
-	<h1>Tree View Example Static</h1>
+	<h1 style = "padding-left: 200px">
+		Tree View Example Static
+	</h1>
 	<div id = "container">
 		<div id = "tree_content">
 		</div>
 		<textarea id = "debug" cols = "50" rows = "30"></textarea >
 	</div>
 	<script language = "JavaScript" type = "text/javascript" charset = "utf-8" src = "./starter_standalone.js"></script>
+	
+	<div class = "content">
+		<a href = "https://github.com/wentout/CustomTree2"> <h3>Go this GIT</h3> </a>
+		<br />
+		<b> Config example: </b>
+		<br />
+		<br />
+	</div>
+	
+	<div class = "content">
+	</div>
+
+<!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<br/>
+<pre style="margin: 0; line-height: 125%">$(<span style="background-color: #fff0f0">&#39;#tree_content&#39;</span>).customTree({
+
+	root <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;top&#39;</span>,
+	init <span style="color: #333333">:</span> {
+		callback <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (controller, tree) {
+			info(<span style="background-color: #fff0f0">&#39;Init callback.&#39;</span>);
+		}
+	},
+
+	<span style="color: #888888">// for leaf callbacks</span>
+	handlers <span style="color: #333333">:</span> {
+		added <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		loaded <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		parsed <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		open <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		close <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		hover <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		unhover <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		focus <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		beforeblur <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (callback, leaf, controller, tree) {
+		},
+		blur <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		deleted <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		},
+		dblclick <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree) {
+		}
+	},
+
+	listeners <span style="color: #333333">:</span> {
+		<span style="color: #888888">// click, dblclick, contextmenu up the element Label</span>
+		contextmenu <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree, event) {
+		},
+		dblclick <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (leaf, controller, tree, event) {
+		}
+	},
+
+	storeLoaded <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>,
+	focusParentOnClose <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+	<span style="color: #888888">// focusByDblClick: true,</span>
+	<span style="color: #888888">// blurFromContainerClick : false,</span>
+	<span style="color: #888888">// blurFromContainerDblClick : false,</span>
+
+	labelsBreak <span style="color: #333333">:</span> {
+		by <span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">50</span>,
+		expandOnHover <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>,
+		expandOnSelect <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
+	},
+
+	loader <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span> (path, callback) {
+		... your code <span style="color: #008800; font-weight: bold">for</span> nodes loading
+	}
+
+});
+</pre>
+<br/>
+</div>
+
+	<div class = "content">
+		<br />
+		<b> Example of a single node (leaf) JSON response: </b>
+		<br />
+		<p> Inside of code Tree Data is JavaScript Object. Therefore tree leafs are simply fields of that object.
+		<br>So, there is strong naming convention used for storing data about leafs: </p>
+	</div>
+
+<!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<br />
+<pre style="margin: 0; line-height: 125%">{
+	<span style="color: #888888">// &amp;ndash; inside of current branch must be unique name, used as tree object property inside of code,</span>
+	<span style="background-color: #fff0f0">&#39;unique_naming_string&#39;</span> <span style="color: #333333">:</span> {
+
+		<span style="color: #888888">// &amp;ndash; optional, that will be user for presentation instead of .name,</span>
+		text <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;string&#39;</span>,
+
+		<span style="color: #888888">// &amp;ndash; optional boolean, that indicates leaf is folder or not, &quot;folder&quot; means there are children inside,</span>
+		folder <span style="color: #333333">:</span> [<span style="color: #008800; font-weight: bold">true</span> <span style="color: #333333">||</span> <span style="color: #008800; font-weight: bold">false</span>],
+
+		<span style="color: #888888">// &amp;ndash; optional boolean, indicates leaf children must be loaded and leaf must be open during rendering</span>
+		open <span style="color: #333333">:</span> [<span style="color: #008800; font-weight: bold">true</span> <span style="color: #333333">||</span> <span style="color: #008800; font-weight: bold">false</span>]
+		
+		<span style="color: #888888">// and all that You need could be used as other leaf properties</span>
+		
+	}
+}
+</pre>
+<br />
+</div>
+
+
+	<div class = "content">
+		<br />
+		<b> Config Explanation { </b>
+		<br />
+		
+		<ul>
+			<li>
+				<b>root</b> &ndash; name of root branch, must be used!
+			</li>
+			<li>
+				<b>init</b> &ndash; 
+			</li>
+		</ul>
+	</div>
+
+<!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<br />
+<pre style="margin: 0; line-height: 125%"><span style="color: #888888">// parameters used while init and loading root branch</span>
+init <span style="color: #333333">:</span> {
+	
+	<span style="color: #888888">// delay before loading root in miliseconds, or null</span>
+	delay <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">null</span>,
+	
+	<span style="color: #888888">// class name, used for tree container while loading rood branch</span>
+	<span style="color: #888888">// case not provided, there will be no preloader</span>
+	preloader <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;preloader&#39;</span>,
+	
+	<span style="color: #888888">// function (controller, tree) used imediately after init</span>
+	callback <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">null</span>,
+	
+	<span style="color: #888888">// method user for expanding rood branch</span>
+	method <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;fadeIn&#39;</span>,
+	
+	<span style="color: #888888">// make auto init, means tree component will load itself without any other options</span>
+	auto <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+	
+	<span style="color: #888888">// path of the leaf for initial focus()</span>
+	focus <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">null</span>
+
+},
+</pre>
+<br />
+</div>
+	
+	<div class = "content">
+		<br />
+		<ul>
+			<li>
+				<b>handlers ( leaf, controller, tree )</b> &ndash; a set of pre-configured event handlers that will be used while manipulation with tree.
+				<br><br>
+				<p>
+				Each callback could use standard pack of arguments: <br/><br/>
+				<b>leaf</b> &ndash; current leaf for callback</br><br/>
+				<b>controller</b> &ndash; tree controller, used for API manipulation</br><br/>
+				<b>leaf</b> &ndash; tree Object itelf. 
+				<br/>THIS IS NOT A LOADED DATA, this is object that was created for the loaded data!<br/>
+				Means it contains all of [leafs] passed here.
+				</p>
+				
+				<h3>but 'beforeblur' handler uses another set:</h3>
+				<b> ( callback, leaf, controller, tree ) </b>
+				<p>
+				Here the Callback is function, you must call when you need this leaf blured.<br />
+				If leaf can't be blured right now, just don't use this callback.
+				</p>
+				<br>
+			</li>
+
+			<li>
+				<b>loader ( path, callback )</b> &ndash; you must to write this function.
+				<br><br>
+				<p>
+				It will be used by a tree controller as a single way to load data about tree root and tree leaf childrens.<br><br>
+				It receives path array :
+				</p>
+				
+				<p style = "padding-left: 20px">path = <b>['tree.root', 'leaf.name']</b></p>
+					
+				<br
+				<p>
+				and <b>callback</b> function, where you must to pass JS Object of loaded childrens for this path.<br>
+				It must be not JSON, it must be an object!
+				</p>
+				
+			</li>
+			
+			<li>
+				<b>listeners </b> &ndash; event handlers in jQuery .on(...) format, that would be used as callbacks while user manipulations with rendered leaf.text.
+				<p>
+				For example, if you wish to drag item, or use context menu of item, or just need one else 'click' callback instead of 'focus' preset -- use this option.
+				</p>
+			</li>
+
+			<li>
+				<b>theme </b> &ndash; CSS class name PREFIX_ for tree container class name.<br><br>
+			</li>
+			<li>
+				<b>cls </b> &ndash; set of CSS class names for rendering:
+			</li>
+
+		</ul>
+
+		
+	</div>
+
+	
+<!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<br />
+<pre style="margin: 0; line-height: 125%">cls <span style="color: #333333">:</span> {
+
+	<span style="color: #888888">// tree root class name</span>
+	root <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;tree_root&#39;</span>,
+
+	<span style="color: #888888">// tree controll class name, is there where plus and minuse indicates folder is open or not</span>
+	control <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;tree_control&#39;</span>,
+	
+	<span style="color: #888888">// status used for indication that leaf is loading, if you need class name there -- use this option</span>
+	status <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;tree_leaf_status&#39;</span>,
+	
+	<span style="color: #888888">// leaf text is name for symbols of leaf, this is what is written on leaf</span>
+	text <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;tree_leaf_text&#39;</span>,
+
+	<span style="color: #888888">// if you need optional folder class name</span>
+	folder <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;folder&#39;</span>,
+	
+	<span style="color: #888888">// this will be used when leaf is selected, when .focus() handles</span>
+	selected <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;selected&#39;</span>,
+	
+	<span style="color: #888888">// when mouse is over leaf text</span>
+	hover <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;hover&#39;</span>,
+
+	<span style="color: #888888">// when leaf is loading, used for &#39;status&#39;</span>
+	loader <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;loader&#39;</span>,
+	
+	<span style="color: #888888">// used for indicating open leaf</span>
+	open <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;open&#39;</span>,
+
+	<span style="color: #888888">// tree container class name</span>
+	container <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;container&#39;</span>,
+
+	<span style="color: #888888">// when you don&#39;t whant to use tree text selection</span>
+	supressLabelTextSelection <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;unselectable&#39;</span>,
+	supressTreeTextSelection <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;unselectable&#39;</span>
+
+}
+</pre>
+<br />
+</div>
+
+
+
+
+	<div class = "content">
+		<ul>
+			<li>
+				<b>html </b> &ndash; what HTML tag names you will use for rendering:
+			</li>
+		</ul>
+	</div>	
+	
+<!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<br>
+<pre style="margin: 0; line-height: 125%">html <span style="color: #333333">:</span> {
+
+	<span style="color: #888888">// tree root contaienr tagName</span>
+	tree <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&lt;UL&gt;&#39;</span>,
+	
+	<span style="color: #888888">// leaf container tagName</span>
+	leaf <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&lt;LI&gt;&#39;</span>,
+	
+	<span style="color: #888888">// where children stored inside of leaf</span>
+	children <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&lt;UL&gt;&#39;</span>,
+
+	<span style="color: #888888">// what you will use for leaf text and control elements</span>
+	heading <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&lt;DIV&gt;&#39;</span>,
+	
+	<span style="color: #888888">// there wher + &amp; - are</span>
+	control <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&lt;SPAN&gt;&#39;</span>,
+	
+	<span style="color: #888888">// there wher current status and &#39;loading&#39; caption indicates</span>
+	status <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&lt;SPAN&gt;&#39;</span>,
+	
+	<span style="color: #888888">// there where leaf.text is</span>
+	text <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&lt;SPAN&gt;&#39;</span>,
+
+	<span style="color: #888888">// whole container for tree container</span>
+	container <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&lt;DIV&gt;&#39;</span>
+
+},
+</pre>
+<br>
+</div>
+
+
+	<div class = "content">
+		<ul>
+			<li>
+				<b>control </b> &ndash; what strings you will use for rendering controls "plus and minus":
+			</li>
+		</ul>
+	</div>	
+	
+<!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<br>
+<pre style="margin: 0; line-height: 125%">control <span style="color: #333333">:</span> {
+	close <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;+&#39;</span>,
+	open <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&amp;ndash;&#39;</span>
+},
+</pre>
+<br>
+</div>
+
+
+	<div class = "content">
+		<ul>
+			<li>
+				<b>storeLoaded: true || false </b> &ndash; tree controller could store loaded leaf for reusing when open\close, or just load them each time
+			</li>
+			<li>
+				<b>focusParentOnClose: true || false </b> &ndash; tree controller could focus parent element when closing focused child
+			</li>
+			<li>
+				<b>focusByDblClick: true || false </b> &ndash; instead of focusing by click you could with to focus by "double click"
+			</li>
+			<li>
+				<b>blurFromContainerClick: true || false </b> &ndash; you could wish to blur current focused leaf when clicks on tree container
+			</li>
+			<li>
+				<b>blurFromContainerDblClick: true || false </b> &ndash; simply as previous but for double click
+			</li>
+			<li>
+				<b>labelsBreak: </b> &ndash; you could wish to use extremely lont texts for leafs, here is options where you could configure rendering
+			</li>
+		</ul>
+	</div>	
+
+<!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<br/>
+<pre style="margin: 0; line-height: 125%">labelsBreak <span style="color: #333333">:</span> {
+
+	<span style="color: #888888">// how many symbols to break text string by</span>
+	by <span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">0</span>,
+	
+	<span style="color: #888888">// with what you wish to break </span>
+	str <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;\n&#39;</span>,
+	
+	<span style="color: #888888">// if you wish whole string is always shown</span>
+	expandAlways <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>,
+	
+	<span style="color: #888888">// if shown only when hover</span>
+	expandOnHover <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>,
+	
+	<span style="color: #888888">// if shown only when focused</span>
+	expandOnSelect <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
+}
+</pre>
+<br/>
+</div>
+
+
+	<br />
+	<br />
+	<div class = "content">
+		<b> } </b>
+	</div>
+
+	<div class = "content">
+		<br />
+		<br />
+		<p> That is all, hope this is enough. </p>
+	</div>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
 	
 </body>
 </html>
