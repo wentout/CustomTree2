@@ -1,0 +1,24 @@
+body {
+	background: #C0C0C0;
+	font-family: Tahoma;
+}
+
+#container {
+	background: white;
+	padding: 20px;
+}
+
+#tree_content {
+	height: 450px;
+	width: 450px;
+	border: 1px solid black;
+	float: left;
+	margin: 0px 50px 0px 30px;
+}
+
+#debug  {
+	border: 1px solid black;
+	height: 440px;
+	width: 450px;
+	padding: 5px 15px 5px 15px;
+}
