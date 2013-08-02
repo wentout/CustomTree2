@@ -414,6 +414,34 @@ init <span style="color: #333333">:</span> {
 		<b> } </b>
 	</div>
 
+
+	<div class = "content">
+		<h3> Controller API </h3>
+		<ul>
+
+			<li>
+				<b>getPath ( leaf ) </b> &ndash; builds URL ARRAY from Leaf Object: [ 'top', 'leaf_name', 'child_name' ... ]
+			</li>
+			<li>
+				<b>refresh ( leaf, callback, andOpen )  </b> &ndash; reloads children of passed 'leaf', 
+				<br> 'callback' will be fired after completition,
+				<br> pass 'andOpen' as true if you need to re-open closed leaf
+			</li>
+			<li>
+				<b>blur ( leaf ) </b> &ndash; tries to blur passed leaf, look beforeblur handler for understanding
+			</li>
+			<li>
+				<b>focus ( leaf ) </b> &ndash; tries to focus passed leaf, look beforeblur handler for understanding
+			</li>
+			<li>
+				<b>x </b> &ndash; current controller config described above
+			</li>
+			
+		</ul>
+
+	</div>
+
+
 	<div class = "content">
 		<br />
 		<br />
